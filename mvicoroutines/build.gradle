@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+
+android {
+    namespace = "tsarionovtimofey.tests.architecturesamples.mvicoroutines"
+    compileSdkVersion 35
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 35
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
+    kotlin {
+        jvmToolchain 17
+    }
+}
+
+dependencies {
+    api project(':mvi')
+    api project(':common')
+
+    implementation libs.mvikotlin
+    implementation libs.mvikotlin.extensions.reaktive
+    api libs.arkivanov.mvikotlin.extensions.coroutines
+    implementation libs.mvikotlin.rx
+    implementation libs.mvikotlin.rx.internal
+    implementation libs.javax.inject
+    implementation libs.utils.internal
+
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.timber
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+}

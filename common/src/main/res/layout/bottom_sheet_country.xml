@@ -1,0 +1,99 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@android:color/white">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.87" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize">
+
+            <FrameLayout
+                android:id="@+id/toolbarContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingEnd="?attr/actionBarSize"
+                tools:ignore="RtlSymmetry" >
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editText_search"
+        style="@style/PickerStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_picker_text"
+        android:hint="@string/search_hint"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineLeft"
+        app:layout_constraintRight_toRightOf="@id/guidelineRight"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_countryDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineLeft"
+        app:layout_constraintRight_toRightOf="@id/guidelineRight"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+        tools:listitem="@layout/layout_recycler_country_tile" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_noresult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="@string/no_result_found"
+        android:textColor="@android:color/primary_text_light"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_search" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

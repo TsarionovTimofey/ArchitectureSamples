@@ -1,0 +1,44 @@
+[versions]
+agp = "8.8.2"
+javaxInject = "1"
+kotlin = "2.0.21"
+coreKtx = "1.16.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+kotlinxCoroutinesCore = "1.6.1"
+lifecycleViewmodelKtx = "2.5.1"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+mvikotlin = "2.0.4"
+mvikotlinExtensionsCoroutines = "2.0.4"
+rx = "2.0.4"
+rxInternal = "2.0.4"
+timber = "5.0.1"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+arkivanov-mvikotlin-extensions-coroutines = { module = "com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines", version.ref = "mvikotlinExtensionsCoroutines" }
+javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+mvikotlin = { module = "com.arkivanov.mvikotlin:mvikotlin", version.ref = "mvikotlin" }
+mvikotlin-extensions-reaktive = { module = "com.arkivanov.mvikotlin:mvikotlin-extensions-reaktive", version.ref = "mvikotlin" }
+mvikotlin-rx = { module = "com.arkivanov.mvikotlin:rx", version.ref = "rx" }
+mvikotlin-rx-internal = { module = "com.arkivanov.mvikotlin:rx-internal", version.ref = "rxInternal" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+utils-internal = { module = "com.arkivanov.mvikotlin:utils-internal", version.ref = "mvikotlin" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+

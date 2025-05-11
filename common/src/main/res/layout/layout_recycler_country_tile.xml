@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ccp_selectable_bg"
+    android:clickable="true"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+    <LinearLayout
+        android:id="@+id/linear_flag_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/flag_india"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_countryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/textView_code"
+        android:layout_toLeftOf="@+id/textView_code"
+
+        android:layout_toEndOf="@+id/linear_flag_holder"
+        android:layout_toRightOf="@+id/linear_flag_holder"
+        android:gravity="center"
+        android:text="India (IN)"
+        android:textColor="@color/colorTrout"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="end|center_vertical"
+
+        android:text="+91"
+        android:textColor="@android:color/secondary_text_light"
+        android:textDirection="ltr"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/preferenceDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:alpha="0.2"
+        android:background="#898989"
+        android:visibility="gone" />
+</RelativeLayout>

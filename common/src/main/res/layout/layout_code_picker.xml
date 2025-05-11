@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/countryCodeHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="4dp"
+
+    android:background="@drawable/bg_picker_text"
+    android:paddingEnd="4dp">
+
+
+    <RelativeLayout
+        android:id="@+id/rlClickConsumer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/linear_flag_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/google_1x"
+            android:layout_marginRight="@dimen/google_1x"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/linear_flag_border"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/image_flag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_margin="0.5dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/flag_india"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--</LinearLayout>-->
+        <com.common.cpp.EmojiAppCompatTextView
+            android:id="@+id/textView_selectedCountry"
+            style="@style/PickerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="24dp"
+            android:singleLine="true"
+            android:text="(IN) +91"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            app:autoSizeMaxTextSize="25sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
+            app:autoSizeTextType="uniform" />
+
+        <ImageView
+            android:id="@+id/imageView_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/textView_selectedCountry"
+            android:layout_toRightOf="@+id/textView_selectedCountry"
+            android:adjustViewBounds="true"
+            android:paddingBottom="24dp"
+            android:src="@drawable/ccp_down_arrow"
+            app:tint="#4C5160"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 35
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 35
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'com.common'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
+    kotlin {
+        jvmToolchain 17
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation libs.mvikotlin
+    implementation libs.mvikotlin.extensions.reaktive
+    api libs.arkivanov.mvikotlin.extensions.coroutines
+    implementation libs.mvikotlin.rx
+    implementation libs.mvikotlin.rx.internal
+    implementation libs.javax.inject
+    implementation libs.utils.internal
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.timber
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+}

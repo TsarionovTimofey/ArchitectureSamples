@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+
+android {
+    namespace = "tsarionovtimofey.tests.architecturesamples.mvi"
+    compileSdkVersion 35
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 35
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
+    kotlin {
+        jvmToolchain 17
+    }
+}
+
+dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation libs.mvikotlin
+    implementation libs.mvikotlin.extensions.reaktive
+    api libs.arkivanov.mvikotlin.extensions.coroutines
+    implementation libs.mvikotlin.rx
+    implementation libs.mvikotlin.rx.internal
+    implementation libs.javax.inject
+}
